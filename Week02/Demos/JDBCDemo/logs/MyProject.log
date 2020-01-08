@@ -1,0 +1,6 @@
+2019-11-21 11:20:21,497 DEBUG c.r.r.SuperPetRepositoryImpl [main] The getAllSuperPets method in the repository layer has been called.
+2019-11-21 11:22:35,833 DEBUG c.r.r.SuperPetRepositoryImpl [main] The getAllSuperPets method in the repository layer has been called.
+2019-12-02 18:49:56,134 DEBUG c.r.r.SuperPetRepositoryImpl [main] The getAllSuperPets method in the repository layer has been called.
+2019-12-02 18:54:53,100 DEBUG c.r.r.SuperPetRepositoryImpl [main] The getAllSuperPets method in the repository layer has been called.
+2019-12-02 18:56:58,276 DEBUG c.r.r.SuperPetRepositoryImpl [main] The getAllSuperPets method in the repository layer has been called.
+2019-12-02 18:57:02,928 DEBUG c.r.r.SuperPetRepositoryImpl [main] The getAllSuperPets method in the repository layer has been called.

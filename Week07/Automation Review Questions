@@ -1,0 +1,89 @@
+What is the testing pyramid?
+What is unit testing? How do you write true unit tests?
+What is integration testing?
+What is system testing?
+What is user acceptance testing?
+What are the types of user acceptance testing? What is the difference between them?
+What is positive testing?
+What is negative testing?
+What is functional testing?
+What is non-functional testing?
+What is load testing?
+What is stress testing?
+What is spike testing?
+What is ramp-up testing?
+What is ramp-down testing?
+What is usability testing?
+What is exploratory testing?
+What is exhaustive testing?
+What is boundary testing?
+What is equivalency testing?
+What is smoke testing?
+What is regression testing?
+What is re-testing?
+What is sanity testing? How is it different from basic regression testing?
+What is blackbox testing?
+What is whitebox testing?
+What is manual testing?
+What is the difference between quality assurance and quality control?
+What is the difference between verification and validation?
+What is a defect?
+What’s the difference between a bug and an error?
+What is the defect life cycle?
+What is a test strategy document?
+What is a test plan document?
+What is a test case document?
+What is a level of effort document?
+What is a requirements traceability matrix?
+What is a test summary document?
+What is test-driven development?
+What is behavior-driven development?
+What are some examples of BDD frameworks?
+What is data-driven testing?
+What is keyword-driven testing?
+What is a hybrid testing framework?
+What is TestNG?
+What are the annotations of TestNG? What does each annotation do?
+What are some TestNG assertions?
+How do I create test groups in TestNG?
+Why would I use a data provider?
+How do I create a data provider in TestNG?
+How do I specify that a test method should use a data provider?
+What are some of the tags used in the XML configuration of TestNG?
+How do I disable a test in TestNG?
+What is the Spring MVC Test Framework? What does the Spring MVC Test Framework allow us to do?
+What is RestAssured? What does it allow us to do?
+What is the benefit of using ResAssured?
+What is Mockito?
+What are some of the annotations of Mockito? What are they used for?
+What is test automation?
+What are the benefits of automating tests?
+When should you automate tests? When shouldn’t you automate tests?
+What is Selenium WebDriver?
+What are the components of Selenium? What does each component do?
+What are some of the implementations of WebDriver?
+How do I use a WebDriver to load up a webpage?
+How do I specify which driver I’m using and where to find it when setting up my WebDriver?
+What is the page object model? Why do we use it?
+What is PageFactory?
+What is a WebElement?
+What annotation is used to grab WebElements from a web page when using PageFactory?
+What are the Selenium selectors/locators?
+What is xpath? What does it stand for? What does it allow us to do?
+What method do I use to send text to an input box with Selenium?
+What method do I use to click on an element using Selenium?
+How do I click on an alert box when using Selenium?
+What are the different waits in Selenium? What is the difference between them all? How do I use them?
+What is Cucumber?
+What is Gherkin?
+What are some Gherkin keywords? What does each of these keywords do?
+What is a feature file?
+What is Gluecode?
+What is a Step Definition File?
+How do I run a feature file and the Gluecode that was generated using that feature file?
+What is a Test Runner?
+What is Protractor?
+What framework is Protractor built on top of?
+What is Jasmine?
+What engine does Jasmine use?
+

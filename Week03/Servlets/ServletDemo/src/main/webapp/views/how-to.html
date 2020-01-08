@@ -1,0 +1,106 @@
+<!-- This is how we create a comment in HTML/XML. -->
+<!--The first thing we will is provide our document type declaration:-->
+<!DOCTYPE html>
+<!--The root tag of any HTML is (surprise!): HTML-->
+<html>
+    <!--Now we need our head tag to supply metadata about this page.-->
+    <head>
+        <meta charset="UTF-8"/>
+        <title>This is the title of this page!</title>
+        <link href="../styles/how-to.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <!--Now let's add a body to this page. This is where the elements the end user sees will be placed.-->
+    <body>
+        <header>
+            <h1 style="text-align: center">We are learning HTML! Yay!</h1>
+        </header>
+        <!--While most tags must be closed, there are some self-closing tags in HTML.-->
+        <hr>
+        <h2>HTML Fundamentals</h2>
+        <h3>What is HTML?</h3>
+        <p>HTML stands for Hypertext Markup Language. It is interpreted by the browser -- not compiled. It is NOT a programming language. In any case, it is used to create the structure of web pages. Each element you see on a web bpage is there becauase of HTML (and, yes, the formal name for these components of a web page is "element".</p>
+        <h3>What is the basic structure of an HTML document?</h3>
+        <p>An HTML document has a standard "skeleton" that consists of several opening and closing tags(e.g. "<>"). These tags include:
+        <ol>
+            <li><b>A Doctype Declaration: </b>This tells the browser what type of document to expect. Note that the Doctype Declaration is not specific to HTML.</li>
+            <li><b>A Root Tag: </b>The root tag of any HTML document is the "html" tag.</li>
+            <li><b>A Head Tag: </b>This tag contains metadata about the document. This metadata includes information about the set of characters being used and the page's title.</li>
+            <li><b>A Body Tag: </b>The body tag contains other tags which add the actual structure to the page. Here you'll find paragraph tags, div tags, and a wide variety of other commonly used tags.</li>
+        </ol></p>
+        <h3>How are HTML elements rendered?</h3>
+        <p>Recall that HTML is an interpreted language. This means that your browser has an interpreter which knows how to make sense of it -- no compilation needed. Well, when your browser is interpreting HTML, it renders each element on the page sequentially. In other words, it steps through the HTML document and reads each element sequently (line by line). And this isn't just true of HTML elements -- it's also true of any scripts you might load.</p>
+        <h3>What are some common HTML tags?</h3>
+        <p>Let's start with a basic paragraph tag. We've been using this one the entire time! We've also been using various header tags, of which there are six, each one getting progressively smaller. Check it out:</p>
+        <!-- Recall that we can use ids and classes to select elements on our web pages. We refer to an HTML element's properties (e.g. id, class, style, etc.) as "attributes". -->
+        <h1 id="theBiggest" class="someClass anotherClass">I'm the biggest.</h1>
+        <h2 id="secondLargest">I'm the second largest.</h2>
+        <h3>I'm the third largest, which really means I'm pretty average.</h3>
+        <h4>I'm the fourth largest, so you can barely see me.</h4>
+        <h5>I'm even more obnoxiously less large.</h5>
+        <h6>I'm so tiny that I sometimes wonder why I even exist.</h6>
+        <p>And what's a web page without images? Let's spice this page up by adding an image using the "img" tag! By the way, the "img" tag is a self-closing tag, which means that we don't have to use a lcosing to terminate it.</p>
+        <br/>
+        <p>Of course, a web page also isn't a web page without links. So let's make our image a link by wrapping it in an "a" tag.</p>
+       <a href="https://en.wikipedia.org/wiki/HATEOAS"><img src="file:///C:/Users/Revature/Downloads/funny.jpg.jpg"/></a>
+       <p>We can also add lists to our pages. There are two types of lists that we can choose from: ordered and unordered lists. Let's have a look now, shall we?</p>
+       <ol>
+           <li>This is an ordered list. Hence the tag name "ol", which definitely stands for ordered list.</li>
+           <li>I'm item number two in this here ordered list. Btw, "li" stands for list item.</li>
+       </ol>
+       <ul>
+           <li>I'm an unordered list. I'm just as unordered and scattered as Christina's brain on most days. Oops!</li>
+           <li>I'm the second list item in this list, but I' just a bullet point because order doesn't matter.</li>
+       </ul>
+       <p>Let's not forget about the "div" tag, which allows us to create sections by div-iding the page. Get it?</p>
+       <!-- This is inline css. In order to use inline css, we must use the "style attribute." -->
+       <div style="background-color: cadetblue; width: 600px; height: 50px">
+           <p>I'm a paragraph within a div. This means that this div is my immediate parent.</p>
+       </div>
+       <p>As of HTML5, we can even use the new and exciting "canvas" tag. This allows us to create 2D/3D canvases.</p>
+       <canvas id="canvasExample" width="250" height="250"></canvas>
+       <script>
+           var canvas = document.getElementById("canvasExample");
+           var context = canvas.getContext("2d");
+           context.moveTo(100, 0);
+           context.lineTo(400, 400);
+           context.stroke();
+       </script>
+       <p>And this, my friends, is the most magical tag there is: the c-section!</p>
+       <!-- You can technically name your tag whatever you want. If you do so, it is simply a custom tag that you have to provide stylingg for yourself. The convention is to name these tags using hyphens. -->
+       <c-section>Just kidding. This is a Christina section.</c-section>
+       <p>But on a more serious note, there's one more big element you'll need to know about: the "form" tag (and all of its sub tags, of course). We can use it to get user input.</p>
+      	<!-- When using forms, we can give our forms a "method" and an "action." The
+      	method specifies which HTTP verb we want to use while the "action" specifies
+      	the endpoint (or resource) we'd like to access when submitting the form. This
+      	endpoint will receive the data that is submitted via this form. -->
+       <form method="post" action="../submitform" class="form-item">
+            <label for="youremail" style="display:flex; flex-direction:column" class="form-item">Email Address</label>
+            <!-- We can use some client side validation/form validation (e.g. using the "required" attribute, but this is NOT enough to secure your application.) -->
+            <!-- I've given this input element a name as we will need this name to grab
+            the user input on the Java side. -->
+            <input name="userEmail" type="email" id="youremail" style="display:flex; flex-direction:column; border-radius: 5px" placeholder="Enter Your Email Address" class="form-item" required/>
+            <label for="yourpassword" style="display:flex; flex-direction: column" class="form-item">Password:</label>
+            <input name="userPassword" type="password" id="yourpassword" style="display:flex; flex-direction: column; border-radius: 5px" placeholder="Enter Your Password" class="form-item" required/>
+            <button id="aButton" style="display:flex; flex-direction: column; background-color:lavender; border-radius:5px;" class="form-item">Don't Press Me</button>
+       </form>
+       <h3>How do we add some style to our HTML documents?</h3>
+       <p>Alright. HTML5 is cool and all, but isn't this page a bit...boring? Is there any way to spruce it up? Yes! And I'm about to show you how!</p>
+       <h3>
+           Styling Your Web Page (In 3 Ways!)
+       </h3>
+       <p>There are three different ways to style your web pages. You can use:</p>
+       <ol>
+           <li>Inline CSS</li>
+           <li>Style Tags</li>
+           <li>External Style Sheets</li>
+       </ol>
+       <p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><b>Inline CSS</b> entails styling your elements right here in your HTML file (hence the term "inline") using the "style" attribute. This paragraph, for instance, is being styled using inline CSS.</p>
+       <p id="styledUsingAStyleTag">A <b>Style Tag</b> is an HTML tag inside of which we can write a block of CSS. Let's style this paragraph using a style tag!</p>
+       <style>
+           #styledUsingAStyleTag{
+               color: blue;
+           }
+       </style>
+       <p>Our final option for styling a web pag is, of course, using an <b>External Style Sheet</b>! That said, let's head to the top of our document to load a style sheet!</p>
+    </body>
+</html>

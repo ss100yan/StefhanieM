@@ -1,0 +1,57 @@
+What is a servlet?
+What is the servlet life cycle? Which methods are called in this cycle?
+What is the difference between the GET and POST HTTP methods?
+What are some other HTTP methods?
+What is the difference between a servletConfig and servletContext?
+What is a deployment descriptor?
+What is XML?
+Well formed XML vs valid XML?
+What is the difference between a DTD and XSD?
+How do I preload a servlet in my web.xml?
+How do I set init params for both servlet config and context?
+What tags are used for mapping a servlet in the web.xml?
+What is the servlet inheritance tree?
+What is a filter?
+How do I perform error handling with the deployment descriptor?
+What is a front controller?
+What is JSON?
+JSON syntax?
+What is AJAX?
+What are the different states of AJAX?
+What is the object we use for AJAX in javascript?
+What triggers the different state changes of this object?
+What is the name of the property that detects state changes?
+How do I use AJAX to hit a servlet? How do I receive JSON back?
+RequestDispatcher vs sendRedirect?
+How do I get form data with servlets?
+What is the PrintWriter?
+What is Angular?
+What is the purpose of Angular?
+Explain the various files and their purposes within an Angular application.
+What is the purpose of npm and webpack? 
+What is linting?
+What is bundling?
+What is typescript?
+What are the different access modifiers of angular?
+What are the purposes of classes and decorators?
+What are directives?
+What are services?
+What are modules?
+What are pipes?
+What is the purpose of components and HTML templates?
+What is one-way data binding? Two-way data binding?
+How do I perform the different data bindings?
+What is string interpolation?
+What is property binding?
+What is event binding?
+What is routing?
+How do I perform routing?
+What is RxJS?
+How do I send HTTP requests in Angular?
+What is the difference between promises and observables?
+What is the difference between AngularJS and Angular 4+?
+What is MVC?
+What are the different lifecycle methods that can be used with components?
+What is the purpose of package.json?
+
+

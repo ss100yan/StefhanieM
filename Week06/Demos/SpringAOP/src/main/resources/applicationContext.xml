@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This XML file serves as our Application Context (our Bean Factory). It is here
+that we will define our Spring Beans (and wire them together). We will also configure
+any Spring modules that we're using here. 
+
+Note: "beans" is the root tag of this file. -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+		
+		<!-- This tells the framework that we want to use an annotation-driven
+		approach to declaring our beans. -->
+		<context:annotation-config></context:annotation-config>
+		
+		<!-- This tells the framework which packages to scan for Spring
+		stereotypes and annotations. You should always be as specific as possible. -->
+		<context:component-scan base-package="com.revature.repository;com.revature.service;com.revature.configuration;com.revature.aspect"></context:component-scan>
+		<!-- This is how we define a bean within our Application Context. We give the
+		bean a name and detail the fully qualified class name. Note that this bean name
+		specifies how we must refer to this bean throughout our application. That is to
+		say, whenever we want an instance of this bean, we should use this bean to
+		get that instance. -->
+	<!-- <bean name="superPetRepository" class="com.revature.repository.SuperPetRepositoryImpl" scope="singleton"></bean> -->
+	
+	<!-- Now let's discuss "bean wiring". Bean wiring entails creating relationships
+	between the beans in our IOC container as the container has no natural way of 
+	knowing the relationships between our beans. -->
+	<!-- <bean name="superPetService" class="com.revature.service.SuperPetService" autowire="constructor"> -->
+	<!-- This property tag denotes that the SuperPetService bean has a SuperPetRepository
+	bean as a property/field (so a dependency). 
+	
+	There are three ways to inject beans that been wired in: Setter Injection, Field
+	Injection, and Constructor Injection. The below example uses setter injection. Note
+	that I didn't specify this bean should be injected via setter injection. This is
+	just how Spring behaves if no other method of injection is specified.
+	<property name="superPetRepository" ref="superPetRepository"></property> -->
+	
+	<!-- We can also try construction injection instead: -->
+	
+	<!-- <constructor-arg index="0" ref="superPetRepository"></constructor-arg> -->
+	<!-- </bean>-->
+	
+	<!-- Autowiring Beans:
+	
+	When we "autowire" beans, we don't have to explicitly create relationships between
+	beans as we did above. We can instead define the beans and tell the framework
+	to wire them in for us as needed. We can tell the framework to wire these beans
+	in for us byType, byName, or constructor. 
+	
+	byType: The framework looks for a property with the given reference type in the
+	current IOC container. If there is no bean of this type, nothing special happens.
+	Further still, if there is more than one bean of this type in the container, an 
+	error is raised as the framework will not know which bean to provide an instance
+	of.
+	
+	byName: The framework looks for a property with the given bean name in the current
+	IOC container. If there is no bean with this name, nothing special happens.
+	
+	constructor: The framework looks for an argument of the given reference type
+	in the constructor. If there is not exactly one bean of the constructor
+	argument type in the factory, a fatal error is raised as the framework will not
+	know which bean to provide an instance of.-->
+	
+</beans>

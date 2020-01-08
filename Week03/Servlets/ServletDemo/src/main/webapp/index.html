@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hi. You're Here.</title>
+</head>
+<body>
+	<div>
+		<header>
+			<h1>Hello World!</h1>
+		</header>
+	</div>
+	<form method="post" action="./submitform" class="form-item">
+            <label for="youremail" style="display:flex; flex-direction:column" class="form-item">Email Address</label>
+            <!-- We can use some client side validation/form validation (e.g. using the "required" attribute, but this is NOT enough to secure your application.) -->
+            <!-- I've given this input element a name as we will need this name to grab
+            the user input on the Java side. -->
+            <input name="userEmail" type="email" id="youremail" style="display:flex; flex-direction:column; border-radius: 5px" placeholder="Enter Your Email Address" class="form-item" required/>
+            <label for="yourpassword" style="display:flex; flex-direction: column" class="form-item">Password:</label>
+            <input name="userPassword" type="password" id="yourpassword" style="display:flex; flex-direction: column; border-radius: 5px" placeholder="Enter Your Password" class="form-item" required/>
+            <button id="aButton" style="display:flex; flex-direction: column; background-color:lavender; border-radius:5px;" class="form-item">Don't Press Me</button>
+       </form>
+	<script src="./scripts/how-to.js"></script>
+</body>
+</html>

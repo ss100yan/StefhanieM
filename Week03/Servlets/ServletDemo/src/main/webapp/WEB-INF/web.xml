@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This is our deployment descriptor. It is consulted by the web container 
+	so that the web container may know how to handle requests. We will find our 
+	list of welcome files here and our servlet mappings. -->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	<display-name>ServletDemo</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>HelloWorldServlet</servlet-name>
+		<servlet-class>com.revature.web.HelloWorldServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HelloWorldServlet</servlet-name>
+		<url-pattern>/hello</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>FormData</display-name>
+		<servlet-name>FormData</servlet-name>
+		<servlet-class>com.revature.web.FormData</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FormData</servlet-name>
+		<url-pattern>/submitform</url-pattern>
+	</servlet-mapping>
+	<!-- <filter> <display-name>AuthenticationFilter</display-name> <filter-name>AuthenticationFilter</filter-name> 
+		<filter-class>com.revature.web.AuthenticationFilter</filter-class> </filter> 
+		<filter-mapping> <filter-name>AuthenticationFilter</filter-name> <url-pattern>/views/*</url-pattern> 
+		</filter-mapping> -->
+	<filter>
+		<filter-name>CorsFilter</filter-name>
+		<filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+		<init-param>
+			<param-name>cors.allowed.origins</param-name>
+			<param-value>*</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>CorsFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<servlet>
+		<description></description>
+		<display-name>InvalidateSession</display-name>
+		<servlet-name>InvalidateSession</servlet-name>
+		<servlet-class>com.revature.web.InvalidateSession</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>InvalidateSession</servlet-name>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>Redirecting</display-name>
+		<servlet-name>Redirecting</servlet-name>
+		<servlet-class>com.revature.web.Redirecting</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Redirecting</servlet-name>
+		<url-pattern>/redirect</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ServletConfigAndContext</display-name>
+		<servlet-name>ServletConfigAndContext</servlet-name>
+		<servlet-class>com.revature.web.ServletConfigAndContext</servlet-class>
+		<init-param>
+			<param-name>My Servlet Config Param</param-name>
+			<param-value>My Servlet Config Value</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletConfigAndContext</servlet-name>
+		<url-pattern>/configandcontext</url-pattern>
+	</servlet-mapping>
+	<context-param>
+		<param-name>Servlet Context Param</param-name>
+		<param-value>Servlet Context Value</param-value>
+	</context-param>
+	<servlet>
+		<description></description>
+		<display-name>FrontController</display-name>
+		<servlet-name>FrontController</servlet-name>
+		<servlet-class>com.revature.web.FrontController</servlet-class>
+		<!-- This load-on-startup tag tells the web container to instantiate this 
+			servlet as soon as our application starts. This is often used with the front 
+			controller design pattern. Eagerly instantiating a servlet this way can reduce 
+			the amount of time that is spent in the request/response cycle. The value 
+			in between tags specifies the priority of the servlet. The lower the value, 
+			the higher the priority of the servlet. So this servlet will be the first 
+			servlet to be eagerly instantiated. -->
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FrontController</servlet-name>
+		<url-pattern>/FrontController</url-pattern>
+	</servlet-mapping>
+	<!-- If you wish to, you can create custom error pages to handle different 
+		status codes. You can then use this error-page tag to associate a status 
+		code with your custom error page. -->
+	<error-page>
+		<error-code>404</error-code>
+		<location>/404.html</location>
+	</error-page>
+	<!-- This allows you to define a session timeout interval for all sessions in
+	your application. -->
+	<session-config>
+		<session-timeout>60</session-timeout>
+	</session-config>
+</web-app>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- You must specify that the DOCTYPE is a hibernate configuration document
+and then provide the link to the DTD which defines the valid elements of a
+hibernate configuration file. -->
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+        
+<!-- hibernate-configuration is the root tag of any hibernate.cfg.xml file. -->
+<hibernate-configuration>
+<!-- We specify our session factory's properties within this tag. Note that
+the session factory's properties will be applied to each session that is returned. -->
+	<session-factory>
+	<!-- This denotes the driver class depending on which SQL dialect we're using. -->
+		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+		<!-- Now let's configure our database credentials and endpoint: -->
+		<!-- This determines how many connections a single user is allowed to your database.
+		Having several connections will speed up the database process for the
+		user, but this will also eat up any available connections you have for
+		your database much more quickly. -->
+		<property name="hibernate.connection.pool_size">5</property>
+		<!-- This writes all of the generated SQL Hibernate is using to the
+		console. -->
+		<property name="show_sql">true</property>
+		<!-- All hibernate sessions should be thread-safe! -->
+		<property name="hibernate.current_session_context_class">thread</property>
+		<!-- This proprety is what tells Hibernate how to handle entity creation
+		within a database. It can be in 1 of 4 states: CREATE: Hibernate will
+		purge the existing database and create it from scratch. It is bad
+		practice to run Hibernate in CREATE mode. UPDATE: Hibernate connects to the
+		existing database and interacts with it without removing current data.
+		CREATE-DROP: Purges existing tables and creates them from scratch. Then,
+		when the application is terminated, it purges that database once again.
+		VALIDATE: Hibernate will validate a pre-existing schema before updating
+		that schema. This is the best practice! -->
+		<property name="hibernate.hbm2ddl.auto">validate</property>
+		<!-- Hibernate must know where to look for mapped entities. You can
+		either choose a class mapping or an XML file (resource). -->
+		<mapping class="com.revature.model.SuperPet"/>
+		<mapping class="com.revature.model.SuperOwner"/>
+		<!--<mapping resource="superpet.hbm.xml"/> -->
+	</session-factory>
+</hibernate-configuration>

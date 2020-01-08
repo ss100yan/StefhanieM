@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/superpet"
+	xmlns:tns="http://www.example.org/superpet"
+	elementFormDefault="qualified">
+	
+	<element name="getSuperPetRequest">
+		<complexType>
+			<sequence>
+				<element name="name" type="string"></element>
+			</sequence>
+		</complexType>
+	</element>
+	
+	<element name="getSuperPetResponse">
+		<complexType>
+			<sequence>
+				<element name="superpet" type="tns:superpet"></element>
+			</sequence>
+		</complexType>
+	</element>
+	
+	<complexType name="superpet">
+		<sequence>
+			<element name="id" type="int"></element>
+			<element name="name" type="string"></element>
+			<element name="color" type="string"></element>
+			<element name="power" type="string"></element>
+			<element name="age" type="int"></element>
+			<element name="superowner" type="tns:superowner"></element>
+		</sequence>
+	</complexType>
+	
+	<complexType name="superowner">
+		<sequence>
+			<element name="id" type="int"></element>
+			<element name="name" type="string"></element>
+			<element name="homeland" type="string"></element>
+		</sequence>
+	</complexType>
+</schema>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This is a mock application context tht we only want to use to run tests on our
+Spring Controllers. It will serve as a configuration file for our test classes. -->
+<beans
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans">
+	
+	<mvc:annotation-driven></mvc:annotation-driven>
+	
+	<context:component-scan base-package="com.revature.web"></context:component-scan>
+	
+	<!-- We want to use a mock servlet context for tests. Spring MVC Mock provides
+	support for mocking this context. -->
+	<bean name="sc" class="org.springframework.mock.web.MockServletContext"></bean>
+	
+	<bean name="superPetService" class="com.revature.service.SuperPetService"></bean>
+	<bean name="superPetRepository" class="com.revature.repository.SuperPetRepositoryImpl"></bean>
+	<bean name="restTemplate" class="org.springframework.web.client.RestTemplate"></bean>
+	
+</beans>

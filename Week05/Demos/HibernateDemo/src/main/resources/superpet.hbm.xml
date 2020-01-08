@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- We can also map our models using an XML file. The root tag of this file 
+	is "hibernate-mapping". -->
+<hibernate-mapping>
+	<class name="com.revature.model.SuperPet" table="SuperPetTable">
+		<!-- This id tag is used to define a primary key for our entity. -->
+		<!-- This name is a reference to the name of the field (on the Java side). -->
+		<id name="id">
+			<!-- This name is a reference to the column name. -->
+			<column name="SuperPetPK" sql-type="serial"></column>
+			<generator class="auto"></generator>
+		</id>
+		<property name="name">
+			<column name="name"></column>
+		</property>
+		<property name="color">
+			<column name="color"></column>
+		</property>
+		<property name="power">
+			<column name="power"></column>
+		</property>
+		<property name="age">
+			<column name="age"></column>
+		</property>
+	</class>
+	<!-- In Hibernate, we can use "named queries" which allow us to provide
+	an alias for a query. -->
+	<query name="allSuperPets">from SuperPet</query>
+</hibernate-mapping>

@@ -1,0 +1,57 @@
+/*
+This is the best place for your CSS. It makes your HTML more "readable" and allows you to more easily make changes to your pages' style. Not only that, but an external style sheet is more reusable than inline CSS or style tags.
+
+There are several ways to select elements on a web page. Let's go over a few.
+*/
+
+/*Let's select some elements by their class:*/
+.form-item{
+    margin-bottom: 10px;
+    margin-right: 10px;
+    display:flex;
+    flex-direction: row;
+}
+
+/*Let's now select an element by its id:*/
+#theBiggest{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#secondLargest{
+    font-family: cursive;
+}
+
+/*This selects all elements that have the "style" attribute*/
+[style]{
+    color:lightsalmon !important;
+}
+
+/*This selects all elements that have the style attribute with the corresponding value.*/
+[style="text-align: center"]{
+    color:lightgreen;
+}
+
+/*Now let's select all labels that are inside of forms.*/
+form label{
+    font-size: 2em;
+}
+
+/*This selects all paragraphs where the parent is a div.*/
+div > p{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: red;
+}
+
+/*We can also select by the tag name itself.*/
+ul{
+    list-style-type: square;
+}
+
+ol{
+    list-style-type: lower-greek;
+}
+
+/*You can also select multiple things at a time:*/
+ul, ol{
+    color: cornflowerblue;
+}

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	<display-name>SpringMVC</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+<!-- We are handling multiple contexts (e.g. one for our Dispatcher Servlet, our general
+application context, etc.), so we will use this built-in listner that will load all
+of our context configuration files and aggregrate them into a single application
+context. -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<!-- The Spring framework needs to know where your application context is 
+		configured. We will place our applicationContext.xml file in our WEB-INF 
+		folder. -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/applicationContext.xml</param-value>
+	</context-param>
+
+	<!-- Spring MVC takes the hassle of creating servlets away from the developer. 
+		It provides a built-in servlet called the Dispatcher Servlet. While we don't 
+		have to write the code for this servlet ourselves, we do have to map it in 
+		our web.xml. Note that your Dispatcher Servlet class must consult Springs 
+		HandlerMapping interface in order to determine which Spring Controller should 
+		handle an HTTP request. -->
+	<servlet>
+		<servlet-name>DispatcherServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<!-- The Dispatcher Servlet actually requires its own context in which 
+			we will configure some additional Spring Beans and the Internal Resource 
+			View Resolver. -->
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/dispatcherContext.xml</param-value>
+		</init-param>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DispatcherServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+</web-app>

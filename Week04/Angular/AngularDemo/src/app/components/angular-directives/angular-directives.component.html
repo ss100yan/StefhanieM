@@ -1,0 +1,47 @@
+<div class="container">
+    <h2>Directives</h2>
+    <p>A directive is a way that we can invoke Angular functionality within an HTML file. They act as syntax that can be used within our templates without breaking the frontend. There are several types of directives. The two types that we'll discuss are structural directives and attribute directives.</p>
+    <h3>Structural Directives</h3>
+    <p>The two structural directives we'll cover are "ngIf" and "ngFor".</p>
+    <h4>*ngIf</h4>
+    <div>
+        <p>What does the asterisk(*) in front of ngIf denote?</p>
+        <button class="btn btn-danger" (click) = "toggleVisibility()">Show Answer</button>
+        <p *ngIf="visible; else aReference">Any directive that has an asterisk (*) is a "structural directive". A structural directive is a directive that will manipulate the HTML directly. That is, it will be capable of physically deleting or adding HTML on the spot for us.</p>
+        <!--We can use ng-template in conjunction with ngIf to create an if-else condition.-->
+        <ng-template #aReference>
+            <p>
+                Click the button above to see the answer to the question!
+            </p>
+        </ng-template>
+    </div>
+    <h4>*ngFor</h4>
+    <div>
+        <p>Since ngFor is a structural directive as well, we will need the asterisk to signify that it is a structural directive. We can use ngFor to iterate over an array of objects in order to perform some DOM manipulation a specified number of times.</p>
+        <table border="2px">
+            <thead>
+                <tr>
+                    <th>SuperPet ID</th>
+                    <th>SuperPet Name</th>
+                    <th>SuperPet Color</th>
+                    <th>SuperPet Power</th>
+                    <th>SuperPet Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let s of superPets">
+                    <td>{{s.id}}</td>
+                    <!--In Angular, we can use what we refer to as "pipes". Angular pipes allow us to manipulate properties before we place them on the DOM. They're somewhat similar to scalar functions.-->
+                    <td>{{s.name | uppercase}}</td>
+                    <td>{{s.color}}</td>
+                    <td>{{s.power}}</td>
+                    <td>{{s.age}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <h3>Attribute Directives</h3>
+        <p [ngStyle]="styleObject" (click)="changeStyle()">Attribute directives are directives that are applied as attributtes in the elements themselves. However, these directives usually do not aim to change the actual structure of the HTML, but rather change properties such as the style of our elements.</p>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="container">
+    <h2>Databinding</h2>
+    <p>In Angular, databinding is the act of passing data from the "backend" (the actual instance of the component class) to the view and vice versa. There are two types of databinding in Angular: one-way databinding and two-way databinding. One-way databinding entails transfering data in one direction (e.g. from the view to the instance or from the instance to the view). Two-way databinding, on the hand, entails passing data simulatanously in both directions (so from the view to instance and back).
+    </p>
+    <h3>One-Way Databinding Techniques</h3>
+    <h4>String Interpolation</h4>
+    <p>String interpolation is a method of one-way databinding. It binds from the back to the front. In order to perform string interpolation, you need to write the item to be evaluated in between double curly braces. It is essentially a block of TypeScript as innerHTML. Note that interpolation must be performed in between tags, not inside of them (most of the time).</p>
+    <p>For instance, our secret message is: {{secretMessage}}.</p>
+    <p>You can also evaluate expressions using interpolation: 2 + 5 * 8 - 76 = {{2 + 5 * 8 - 76}}</p>
+    <h4>Property Binding</h4>
+    <p>Property binding is a one-way databinding technique that binds from the back to the front, but this time we apply it within element tags. We do this by surrounding what would be an "attribute" of an element with square brackets [likeso].</p>
+    <button class="btn btn-danger" (click)="toggleVisibility()">{{buttonText}}</button>
+    <div [hidden]=visibility>
+        <p>I'M BACK!</p>
+    </div>
+    <h4>Event Binding</h4>
+    <p>Event binding is the third approach to one-way databinding in which we take input, or an event from the view and transfer it to the model. This is done with the element's tag, like property binding. This time, however, we use parentheses instead of brackets. We will typically wrap these parentheses around actual events. (Please see the above button for event binding syntax!)</p>
+    <h3>Two-Way Databinding</h3>
+    <p>We can set up two-way databinding in which input is fed back to an instance of our component and can be brought back to the presentation layer all in the same action. In order to do this, we need to invoke both property and event binding alongside a "directive" called ngModel.</p>
+    <div>
+        <input type="text" [(ngModel)]="userInput"/>
+        <p>The user input is: {{userInput}}</p>
+    </div>
+</div>

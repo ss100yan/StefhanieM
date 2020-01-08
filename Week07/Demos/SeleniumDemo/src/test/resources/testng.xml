@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="mySweetSuite">
+	<test name="myTest">
+		<classes>
+			<class name="com.revature.testng.CalculatorTest"></class>
+		</classes>
+	</test>
+	<test name="packageTest">
+		<packages>
+			<package name="com.revature.testng"></package>
+		</packages>
+	</test>
+	<!-- We can also specify groups and then add test methods to these
+	groups. -->
+	<test name="anotherTest">
+	<groups>
+		<run>
+			<include name="smoke"></include>
+			<exclude name="regression"></exclude>
+		</run>
+	</groups>
+	</test>
+</suite>

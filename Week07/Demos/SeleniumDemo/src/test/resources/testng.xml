@@ -21,5 +21,8 @@
 			<exclude name="regression"></exclude>
 		</run>
 	</groups>
+	<classes>
+		<class name="com.revature.testng.CalculatorTest"></class>
+	</classes>
 	</test>
 </suite>

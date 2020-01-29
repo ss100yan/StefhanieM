@@ -1,6 +1,5 @@
 package com.revature.testng;
 
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -8,7 +7,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.revature.util.Calculator;
-import com.revature.util.CalculatorImpl;
 
 /*
  * TestNG (NG standing for "Next Generation") is a testing tool that can
@@ -54,12 +52,16 @@ public class CalculatorTest {
 //	@BeforeGroups
 //	public void beforeGroups() {}
 	
-	@Test
+	/*
+	 * Use the "dependsOnMethods" attribute to specify that a test
+	 * should not run before a method it depends on.
+	 */
+	@Test(groups= {"smoke"}, dependsOnMethods= {"testSubtraction"})
 	public void testAddition() {
 //		Assert.assertEquals(CalculatorImpl.doMath(add, 3, 4), 7);
 	}
 	
-	@Test
+	@Test(groups= {"regression"})
 	public void testSubtraction() {
 //		Assert.assertEquals(CalculatorImpl.doMath(subtract, 8, 3), 5);
 	}
